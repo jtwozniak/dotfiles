@@ -38,6 +38,7 @@ return {
       tailwindcss = function(_, options)
         options.settings = {
           tailwindCSS = {
+            colorDecorators = true,
             classAttributes = { "className", ".*ClassName" },
             classFunctions = { "clsx", "cn", "cva", "twMerge" },
           },

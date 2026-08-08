@@ -50,9 +50,6 @@
   },
   "plugin": [
     "opencode-pty",
-    // "@zenobius/opencode-skillful",
-    //"opencode-worktree",
-    // "@tarquinen/opencode-dcp",
     "opencode-websearch-cited@1.2.0",
     "@slkiser/opencode-quota",
     "@tarquinen/opencode-dcp@latest"
