@@ -1,7 +1,7 @@
 {
   // Notificator Plugin Configuration
   // Enable/disable the entire plugin
-  "enabled": true,
+  "enabled": false,
   // Desktop notification settings
   "showDesktopNotification": {
     // Enable/disable desktop notifications

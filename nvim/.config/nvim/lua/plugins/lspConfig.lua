@@ -1,3 +1,17 @@
+local root_dir = function(bufnr, on_dir)
+  local fname = vim.api.nvim_buf_get_name(bufnr)
+  local root_file = vim.fs.find({
+    "oxlint.config.ts",
+    ".oxfmtrc.json",
+    ".oxfmtrc.jsonc",
+    "oxfmt.config.ts",
+  }, { path = fname, upward = true })[1]
+
+  if root_file then
+    on_dir(vim.fs.dirname(root_file))
+  end
+end
+
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
@@ -14,24 +28,14 @@ return {
         },
       },
       oxlint = {
-        root_dir = function(bufnr, on_dir)
-          local fname = vim.api.nvim_buf_get_name(bufnr)
-          local root_file = vim.fs.find({
-            "oxlint.config.ts",
-            "pnpm-workspace.yaml",
-            ".git",
-          }, { path = fname, upward = true })[1]
-
-          if root_file then
-            on_dir(vim.fs.dirname(root_file))
-          end
-        end,
+        root_dir = root_dir,
         -- keys = { { "<leader>fl", "<cmd>OxcFixAll<cr>", "Lint fix" } },
         keys = { { "<leader>fl", "<cmd>LspOxlintFixAll<cr><cmd>!pnpm exec oxfmt %<cr>", "Lint fix" } },
         -- settings = {
         --   typeAware = true,
         -- },
       },
+      oxfmt = { root_dir = root_dir },
     },
 
     setup = {

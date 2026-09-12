@@ -21,4 +21,126 @@ function M.git_log_dir(picker, item)
   })
 end
 
+local function in_cwd(path, cwd)
+  return path == cwd or path:sub(1, #cwd + 1) == cwd .. "/"
+end
+
+local function develop_set(picker)
+  local cwd = picker:cwd()
+  local root = Snacks.git.get_root(cwd)
+  if not root then
+    Snacks.notify.warn("Not a git repository")
+    return
+  end
+
+  local result = vim.system({ "git", "diff", "--name-only", "--merge-base", "develop" }, {
+    cwd = root,
+    text = true,
+    timeout = 5000,
+  }):wait()
+  if result.code ~= 0 then
+    Snacks.notify.warn("Could not diff against develop")
+    return
+  end
+
+  local files, dirs = {}, {}
+  for line in vim.gsplit(result.stdout or "", "\n", { trimempty = true }) do
+    local path = svim.fs.normalize(root .. "/" .. line)
+    if in_cwd(path, cwd) then
+      files[path] = true
+      for dir in Snacks.picker.util.parents(path, cwd) do
+        dirs[dir] = true
+      end
+    end
+  end
+  return { files = files, dirs = dirs }
+end
+
+function M.explorer_git_transform(item, ctx)
+  local picker = ctx and ctx.picker
+  if not picker then
+    return item
+  end
+
+  local mode = picker.opts.git_filter
+  if not mode then
+    return item
+  end
+
+  local cwd = picker:cwd()
+  if item.file == cwd then
+    return item
+  end
+
+  if mode == "dirty" then
+    local node = require("snacks.explorer.tree"):node(item.file)
+    if not node or node.ignored then
+      return false
+    end
+    local status = node.status or node.dir_status
+    if status and status:sub(1, 1) ~= "!" then
+      return item
+    end
+    return false
+  end
+
+  if mode == "develop" then
+    local set = picker.opts.git_filter_set
+    if not set then
+      return item
+    end
+    if set.files[item.file] or set.dirs[item.file] then
+      return item
+    end
+    return false
+  end
+
+  return item
+end
+
+function M.explorer_toggle_git_filter(picker, mode)
+  if picker.opts.git_filter == mode then
+    picker.opts.git_filter = nil
+    picker.opts.git_filter_set = nil
+    require("snacks.explorer.actions").update(picker, { refresh = true })
+    return
+  end
+
+  local Tree = require("snacks.explorer.tree")
+  if mode == "develop" then
+    local set = develop_set(picker)
+    if not set then
+      return
+    end
+    picker.opts.git_filter_set = set
+    for path in pairs(set.files) do
+      Tree:open(path)
+    end
+  else
+    picker.opts.git_filter_set = nil
+    local cwd = picker:cwd()
+    Tree:walk(Tree:find(cwd), function(node)
+      if node.path == cwd then
+        return
+      end
+      local status = node.status or node.dir_status
+      if not status or node.ignored or status:sub(1, 1) == "!" then
+        return
+      end
+      Tree:open(node.path)
+    end, { all = true })
+  end
+
+  picker.opts.git_filter = mode
+  require("snacks.explorer.actions").update(picker, { refresh = true })
+end
+
+function M.explorer_toggle_dirty(picker)
+  M.explorer_toggle_git_filter(picker, "dirty")
+end
+
+function M.explorer_toggle_develop(picker)
+  M.explorer_toggle_git_filter(picker, "develop")
+end
+
 return M

@@ -2,14 +2,18 @@ return {
   "folke/snacks.nvim",
   opts = function(_, opts)
     opts = opts or {}
+    local snacks = require("config.snacks")
     opts.profiler = { enabled = false }
     opts.notifier = { enabled = true }
     opts.picker = opts.picker or {}
     opts.picker.actions = opts.picker.actions or {}
-    opts.picker.actions.copy_relative_path = require("config.snacks").copy_relative_path
-    opts.picker.actions.git_log_dir = require("config.snacks").git_log_dir
+    opts.picker.actions.copy_relative_path = snacks.copy_relative_path
+    opts.picker.actions.git_log_dir = snacks.git_log_dir
+    opts.picker.actions.explorer_toggle_dirty = snacks.explorer_toggle_dirty
+    opts.picker.actions.explorer_toggle_develop = snacks.explorer_toggle_develop
     opts.picker.sources = opts.picker.sources or {}
     opts.picker.sources.explorer = vim.tbl_deep_extend("force", opts.picker.sources.explorer or {}, {
+      transform = snacks.explorer_git_transform,
       layout = {
         layout = {
           position = "right",
@@ -18,8 +22,10 @@ return {
       win = {
         list = {
           keys = {
-                ["Y"] = { "copy_relative_path", mode = { "n", "x" }, desc = "Copy Relative Path" },
-                ["gf"] = { "git_log_dir", desc = "Git Log (directory)" },
+            ["Y"] = { "copy_relative_path", mode = { "n", "x" }, desc = "Copy Relative Path" },
+            ["gf"] = { "git_log_dir", desc = "Git Log (directory)" },
+            ["G"] = { "explorer_toggle_dirty", desc = "Toggle modified files" },
+            ["D"] = { "explorer_toggle_develop", desc = "Toggle files vs develop" },
           },
         },
       },

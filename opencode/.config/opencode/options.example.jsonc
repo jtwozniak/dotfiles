@@ -24,18 +24,8 @@
     },
     "contentful": {
       "enabled": false,
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@contentful/mcp-server"
-      ],
-      "environment": {
-        "CONTENTFUL_MANAGEMENT_ACCESS_TOKEN": "",
-        "SPACE_ID": "",
-        "ENVIRONMENT_ID": "",
-        "CONTENTFUL_HOST": "api.eu.contentful.com"
-      }
+      "type": "remote",
+      "url": "https://mcp.eu.contentful.com/mcp"
     },
     "datadog": {
       "enabled": false,

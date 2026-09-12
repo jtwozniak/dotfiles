@@ -4,15 +4,52 @@
     "AGENTS.md",
     "~/.config/opencode/LEARNINGS.md"
   ],
+  "agent": {
+    "plan": {
+      "color": "#9ECE6A"
+    },
+    "build": {
+      "color": "#7DCFFF"
+    },
+    "coding": {
+      "color": "#7AA2F7"
+    },
+    "explore": {
+      "color": "#BB9AF7"
+    },
+    "figma": {
+      "color": "#F7768E"
+    },
+    "jira": {
+      "color": "#FF9E64"
+    },
+    "datadog": {
+      "color": "#632CA6"
+    },
+    "contentful": {
+      "color": "#14D8CC"
+    },
+    "moneybox-investigation": {
+      "color": "#73DACA"
+    }
+  },
   "permission": {
     "lsp": "allow",
     "external_directory": {
-      "~/.config/opencode/**": "allow"
+      "~/.config/opencode/**": "allow",
+      "/tmp": "allow",
+      "/tmp/**": "allow",
+      "~/w": "allow",
+      "~/w/**": "allow"
     },
     "edit": {
       "~/.config/opencode/MEMORY.md": "allow",
       "~/.config/opencode/LEARNINGS.md": "allow"
-    }
+    },
+    "figma_*": "deny",
+    "jira_*": "deny",
+    "datadog_*": "deny",
+    "contentful_*": "deny"
   },
   "lsp": {
     "oxlint": {
