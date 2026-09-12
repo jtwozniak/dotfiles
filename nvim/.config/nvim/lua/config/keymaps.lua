@@ -22,14 +22,6 @@ vim.keymap.set("v", "Ż", ":m '<-2<CR>gv-gv", { desc = "move line up" })
 vim.keymap.set("v", "∆", ":m '>+1<CR>gv-gv", { desc = "move line down" })
 --
 
-vim.keymap.set("n", "<leader>gb", "<Cmd>:Gvdiffsplit<CR>", { desc = "Compare current branch" })
-
-vim.keymap.set("n", "<leader>gm", "<Cmd>:Gvdiffsplit develop<CR>", { desc = "Compare Master" })
-
-vim.keymap.set("n", "<leader>gs", function()
-  require("snacks").picker.git_status()
-end, { desc = "Git Status Files" })
-
 -- Mac multi project
 -- vim.keymap.set("n", "<leader>gm", "<Cmd>:Gvdiffsplit main<CR>", { desc = "Compare Master" })
 

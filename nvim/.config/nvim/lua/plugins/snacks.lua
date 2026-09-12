@@ -26,6 +26,43 @@ return {
     })
   end,
   keys = {
+    { "<leader>gb", "<Cmd>Gvdiffsplit<CR>", desc = "Compare current branch" },
+    { "<leader>gm", "<Cmd>Gvdiffsplit develop<CR>", desc = "Compare develop" },
+    {
+      "<leader>gs",
+      function()
+        Snacks.picker.git_status()
+      end,
+      desc = "Git Status Files",
+    },
+    {
+      "<leader>gM",
+      function()
+        Snacks.picker.git_diff({ base = "develop", group = true })
+      end,
+      desc = "Git files vs develop",
+    },
+    {
+      "<leader>ga",
+      function()
+        Snacks.picker.gh_pr()
+      end,
+      desc = "GitHub PRs (open)",
+    },
+    {
+      "<leader>gj",
+      function()
+        Snacks.picker.gh_pr({ assignee = "@me" })
+      end,
+      desc = "GitHub PRs (assigned)",
+    },
+    {
+      "<leader>go",
+      function()
+        Snacks.picker.gh_pr({ search = "is:open review-requested:@me" })
+      end,
+      desc = "GitHub PRs (review requested)",
+    },
     {
       "gr",
       function()
