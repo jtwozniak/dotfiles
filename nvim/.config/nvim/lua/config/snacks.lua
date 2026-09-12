@@ -21,6 +21,65 @@ function M.git_log_dir(picker, item)
   })
 end
 
+local function dirty_files()
+  local cwd = vim.uv.cwd() or "."
+  local root = Snacks.git.get_root(cwd)
+  if not root then
+    Snacks.notify.warn("Not a git repository")
+    return
+  end
+
+  local result = vim.system({
+    "git",
+    "-c",
+    "core.quotepath=false",
+    "status",
+    "-uall",
+    "--porcelain=v1",
+    "-z",
+  }, {
+    cwd = root,
+    text = true,
+    timeout = 5000,
+  }):wait()
+  if result.code ~= 0 then
+    Snacks.notify.warn("Could not get git status")
+    return
+  end
+
+  local files = {}
+  local parts = vim.split(result.stdout or "", "\0", { plain = true, trimempty = true })
+  local i = 1
+  while i <= #parts do
+    local status, file = parts[i]:match("^(..) (.+)$")
+    if status then
+      local path = file
+      if status:find("[RC]") then
+        i = i + 1
+        path = parts[i] or file
+      end
+      local abs = svim.fs.normalize(root .. "/" .. path)
+      if vim.uv.fs_stat(abs) then
+        files[#files + 1] = abs
+      end
+    end
+    i = i + 1
+  end
+  return files
+end
+
+function M.grep_dirty()
+  local files = dirty_files()
+  if not files then
+    return
+  end
+  if #files == 0 then
+    Snacks.notify.warn("No dirty files")
+    return
+  end
+  Snacks.picker.grep({ dirs = files })
+end
+
 local function in_cwd(path, cwd)
   return path == cwd or path:sub(1, #cwd + 1) == cwd .. "/"
 end

@@ -24,8 +24,8 @@ return {
           keys = {
             ["Y"] = { "copy_relative_path", mode = { "n", "x" }, desc = "Copy Relative Path" },
             ["gf"] = { "git_log_dir", desc = "Git Log (directory)" },
-            ["G"] = { "explorer_toggle_dirty", desc = "Toggle modified files" },
-            ["D"] = { "explorer_toggle_develop", desc = "Toggle files vs develop" },
+            ["D"] = { "explorer_toggle_dirty", desc = "Toggle modified files" },
+            ["M"] = { "explorer_toggle_develop", desc = "Toggle files vs develop" },
           },
         },
       },
@@ -34,6 +34,13 @@ return {
   keys = {
     { "<leader>gb", "<Cmd>Gvdiffsplit<CR>", desc = "Compare current branch" },
     { "<leader>gm", "<Cmd>Gvdiffsplit develop<CR>", desc = "Compare develop" },
+    {
+      "<leader>gd",
+      function()
+        require("config.snacks").grep_dirty()
+      end,
+      desc = "Grep dirty files",
+    },
     {
       "<leader>gs",
       function()
