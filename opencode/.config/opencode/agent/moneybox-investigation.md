@@ -1,8 +1,8 @@
 ---
 description: Investigates cross-repository Moneybox integrations without changing code.
 mode: subagent
-model: github-copilot/grok-4.6
-variant: high
+model: github-copilot/gpt-5.6-sol
+variant: medium
 permission:
   edit: deny
   bash: deny

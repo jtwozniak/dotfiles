@@ -104,7 +104,13 @@ return {
           surface0 = "#141527",
         },
       },
-      custom_highlights = {},
+      custom_highlights = function(C)
+        local U = require("catppuccin.utils.colors")
+        return {
+          DiffChange = { bg = U.darken(C.blue, 0.14, C.base) },
+          DiffText = { bg = U.darken(C.blue, 0.36, C.base) },
+        }
+      end,
       integrations = {
         cmp = true,
         gitsigns = true,

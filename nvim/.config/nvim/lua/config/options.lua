@@ -14,3 +14,4 @@ vim.g.root_spec = { "cwd" }
 vim.g.trouble_lualine = false
 vim.g.snacks_animate = false
 vim.g.lazyvim_picker = "snacks"
+vim.opt.diffopt:append("iwhite")

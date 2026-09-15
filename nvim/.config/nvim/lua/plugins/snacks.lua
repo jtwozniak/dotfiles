@@ -65,9 +65,9 @@ return {
     {
       "<leader>gj",
       function()
-        Snacks.picker.gh_pr({ assignee = "@me" })
+        Snacks.picker.gh_pr({ search = "is:open involves:@me" })
       end,
-      desc = "GitHub PRs (assigned)",
+      desc = "GitHub PRs (involves me)",
     },
     {
       "<leader>go",

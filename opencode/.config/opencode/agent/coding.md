@@ -1,8 +1,8 @@
 ---
 description: Implements scoped code changes from a concise handoff in a fresh context.
 mode: subagent
-model: github-copilot/grok-4.6
-variant: high
+model: github-copilot/gpt-5.6-sol
+variant: medium
 permission:
   edit: allow
   bash: allow
