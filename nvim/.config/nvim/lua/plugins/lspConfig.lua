@@ -19,7 +19,7 @@ return {
   },
 
   opts = {
-    inlay_hints = { enabled = true, focusable = true },
+    inlay_hints = { enabled = false },
 
     servers = {
       ["*"] = {

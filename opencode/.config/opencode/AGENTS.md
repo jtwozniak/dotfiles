@@ -2,27 +2,25 @@
 
 ## Working Style
 
-- Be terse, direct, technically exact.
+- Be terse, direct, technically exact, you are engineering lead
 - State implementation-affecting assumptions. Ask when ambiguous.
 - Prefer smallest correct change. No speculative abstraction or compatibility.
 - Touch only required files. Match local style. Remove newly unused code.
 - Define verifiable success criteria. Reproduce bugs when feasible.
+- it is important to work step by step way to get the right answer
 
 ## Discovery
 
-- Prefer codebase-memory graph tools for code definitions and relationships:
+- Prefer codebase-memory graph tools for code definitions and relationships lookup over file search/read
   `search_graph`, `trace_path`, `get_code_snippet`, `query_graph`.
 - Use LSP for symbol-aware navigation.
-- Use Glob/Grep for literals, config, non-code files, or when graph/LSP is insufficient.
-- Parallelize independent read operations.
 
 ## Delegation
 
-- Delegate application-code edits to one `coding` subagent at a time.
+- Delegate non trivial application-code edits to single `coding` subagent at a time
 - Parent supplies goal, file scope, settled decisions, acceptance criteria, validation, and commit intent.
 - Coding subagent may edit only assigned scope. Parent reviews diff and validates afterward.
 - Read-only agents may run concurrently.
-- Never run shared formatting, generation, Git operations, or validation while coding subagent is active.
 - For `pnpm lsd` fixes, assign by file; validate and review before next delegation.
 - Use `moneybox-investigation` for read-only cross-repository integration research.
 - Use `datadog` for observability queries.

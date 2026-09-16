@@ -1,5 +1,5 @@
 ---
-description: Implements scoped code changes from a concise handoff in a fresh context.
+description: Implements scoped code changes from a concise handoff
 mode: subagent
 model: github-copilot/gpt-5.6-sol
 variant: medium
@@ -9,9 +9,9 @@ permission:
 ---
 
 Implement only assigned scope. Follow task constraints and acceptance criteria.
-Do not change unrelated files or commit unless requested.
 
 Return:
+
 - files changed
 - implementation summary
 - validation results

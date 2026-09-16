@@ -4,6 +4,10 @@
     "AGENTS.md",
     "~/.config/opencode/LEARNINGS.md"
   ],
+  "enabled_providers": [
+    "github-copilot"
+  ],
+  "default_agent": "plan",
   "agent": {
     "plan": {
       "color": "#9ECE6A"

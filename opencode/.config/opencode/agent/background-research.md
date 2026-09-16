@@ -1,5 +1,5 @@
 ---
-description: Performs read-only background research while the parent remains interactive.
+description: Performs read-only background research
 mode: subagent
 model: github-copilot/gpt-5.6-sol
 variant: medium
