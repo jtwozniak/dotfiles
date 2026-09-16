@@ -9,6 +9,7 @@ permission:
 ---
 
 Implement only assigned scope. Follow task constraints and acceptance criteria.
+After completing code edits, run `pnpm lsd` once. Rerun only if needed to obtain a clean result.
 
 Return:
 

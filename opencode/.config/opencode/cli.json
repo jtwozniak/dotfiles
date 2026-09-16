@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "theme": {
+    "name": "catppuccin"
+  },
+  "plugins": [
+    "@slkiser/opencode-quota",
+    "./plugins/headroom-tui.tsx"
+  ],
+  "diffs": {
+    "wrap": "word"
+  },
+  "session": {
+    "sidebar": "auto",
+    "scrollbar": false,
+    "thinking": "show"
+  },
+  "animations": true
+}
