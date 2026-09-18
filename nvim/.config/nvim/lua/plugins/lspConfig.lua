@@ -27,7 +27,12 @@ return {
           { "gr", false }, -- Disable default gr mapping
         },
       },
+      graphql = { filetypes = { "graphql" } },
       oxlint = {
+        flags = {
+          -- debounce_text_changes = 300,
+          -- allow_incremental_sync = false,
+        },
         root_dir = root_dir,
         -- keys = { { "<leader>fl", "<cmd>OxcFixAll<cr>", "Lint fix" } },
         keys = { { "<leader>fl", "<cmd>LspOxlintFixAll<cr><cmd>!pnpm exec oxfmt %<cr>", "Lint fix" } },

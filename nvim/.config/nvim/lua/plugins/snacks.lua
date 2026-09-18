@@ -21,6 +21,11 @@ return {
         },
       },
       win = {
+        input = {
+          keys = {
+            ["gf"] = { "git_log_dir", mode = "n", desc = "Git Log (directory)" },
+          },
+        },
         list = {
           keys = {
             ["Y"] = { "copy_relative_path", mode = { "n", "x" }, desc = "Copy Relative Path" },

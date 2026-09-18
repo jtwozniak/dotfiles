@@ -13,11 +13,47 @@ function M.copy_relative_path(picker)
 end
 
 function M.git_log_dir(picker, item)
-  if not item or not item.dir then
+  item = item or picker:current()
+  local path = item and item.file
+  if type(path) ~= "string" or path == "" then
+    Snacks.notify.warn("No directory selected")
     return
   end
+  if not item.dir then
+    Snacks.notify.warn("Git directory history requires a directory")
+    return
+  end
+
+  if path:sub(1, 1) ~= "/" then
+    path = vim.fs.joinpath(picker:cwd(), path)
+  end
+  path = vim.fs.normalize(path)
+  local stat = vim.uv.fs_stat(path)
+  if not stat or stat.type ~= "directory" then
+    Snacks.notify.warn("Selected path is not a directory")
+    return
+  end
+
+  local root = Snacks.git.get_root(path)
+  if not root then
+    Snacks.notify.warn("Directory is not in a git repository")
+    return
+  end
+  root = vim.fs.normalize(root)
+
+  local pathspec = vim.fs.relpath(root, path)
+  if not pathspec then
+    Snacks.notify.warn("Directory is outside the git repository")
+    return
+  end
+  pathspec = pathspec ~= "" and pathspec or "."
+
   Snacks.picker.git_log({
-    cmd_args = { "--", item.file },
+    cwd = root,
+    cmd_args = { "--", pathspec },
+    current_file = false,
+    current_line = false,
+    follow = false,
   })
 end
 

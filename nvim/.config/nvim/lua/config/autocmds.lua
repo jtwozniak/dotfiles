@@ -2,6 +2,33 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
+-- local buffer_unload_group = vim.api.nvim_create_augroup("delayed_buffer_unload", { clear = true })
+-- local hidden_generation = {}
+--
+-- -- Release hidden file contents after a grace period while keeping buffer list entries.
+-- vim.api.nvim_create_autocmd("BufHidden", {
+--   group = buffer_unload_group,
+--   callback = function(args)
+--     local buf = args.buf
+--     hidden_generation[buf] = (hidden_generation[buf] or 0) + 1
+--     local generation = hidden_generation[buf]
+--
+--     vim.defer_fn(function()
+--       if
+--         hidden_generation[buf] == generation
+--         and vim.api.nvim_buf_is_valid(buf)
+--         and vim.api.nvim_buf_is_loaded(buf)
+--         and #vim.fn.win_findbuf(buf) == 0
+--         and not vim.bo[buf].modified
+--         and vim.bo[buf].buftype == ""
+--         and vim.api.nvim_buf_get_name(buf) ~= ""
+--       then
+--         pcall(vim.api.nvim_buf_delete, buf, { unload = true })
+--       end
+--     end, 30000)
+--   end,
+-- })
+
 -- Function to open file from clipboard
 vim.api.nvim_create_user_command("OpenClipboardPath", function()
   local clipboard = vim.fn.getreg("+"):gsub("[\n\r]", "") -- Get clipboard content and remove newlines
