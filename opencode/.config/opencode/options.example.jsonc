@@ -5,66 +5,62 @@
     "~/.config/opencode/INSTRUCTIONS.md"
   ],
   "mcp": {
-    "atlassian": {
-      "enabled": false,
-      "type": "local",
-      "command": [
-        "uvx",
-        "--python=3.12",
-        "mcp-atlassian"
-      ],
-      "environment": {
-        "JIRA_URL": "https://x.net/",
-        "JIRA_USERNAME": "x@x.com",
-        "JIRA_API_TOKEN": "",
-        "CONFLUENCE_URL": "https://x.net/",
-        "CONFLUENCE_USERNAME": "x@x.com",
-        "CONFLUENCE_API_TOKEN": ""
+    "servers": {
+      "jira": {
+        "disabled": true,
+        "type": "local",
+        "command": [
+          "uvx",
+          "--python=3.12",
+          "mcp-atlassian"
+        ],
+        "environment": {
+          "JIRA_URL": "{env:JIRA_URL}",
+          "JIRA_USERNAME": "{env:JIRA_USERNAME}",
+          "JIRA_API_TOKEN": "{env:JIRA_API_TOKEN}",
+          "CONFLUENCE_URL": "{env:CONFLUENCE_URL}",
+          "CONFLUENCE_USERNAME": "{env:CONFLUENCE_USERNAME}",
+          "CONFLUENCE_API_TOKEN": "{env:CONFLUENCE_API_TOKEN}"
+        }
+      },
+      "contentful": {
+        "disabled": true,
+        "type": "remote",
+        "url": "https://mcp.eu.contentful.com/mcp"
+      },
+      "datadog": {
+        "disabled": true,
+        "type": "remote",
+        "url": "https://mcp.datadoghq.eu/api/unstable/mcp-server/mcp?toolsets=all"
+      },
+      "figma": {
+        "disabled": true,
+        "type": "local",
+        "command": [
+          "npx",
+          "-y",
+          "figma-mcp"
+        ],
+        "environment": {
+          "FIGMA_API_KEY": "{env:FIGMA_API_KEY}"
+        }
+      },
+      "codebase-memory-mcp": {
+        "disabled": false,
+        "type": "local",
+        "command": [
+          "/home/jtw/.local/bin/codebase-memory-mcp"
+        ]
+      },
+      "headroom": {
+        "disabled": false,
+        "type": "local",
+        "command": [
+          "/home/jtw/.local/bin/headroom",
+          "mcp",
+          "serve"
+        ]
       }
-    },
-    "contentful": {
-      "enabled": false,
-      "type": "remote",
-      "url": "https://mcp.eu.contentful.com/mcp"
-    },
-    "datadog": {
-      "enabled": false,
-      "type": "remote",
-      "url": "https://mcp.datadoghq.eu/api/unstable/mcp-server/mcp?toolsets=all"
-    },
-    "figma": {
-      "enabled": false,
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "figma-mcp"
-      ],
-      "environment": {
-        "FIGMA_API_KEY": ""
-      }
-    },
-    "playwright": {
-      "enabled": false,
-      "type": "local",
-      "command": [
-        "npx",
-        "@playwright/mcp@latest"
-      ]
-    },
-    "next-devtools": {
-      "enabled": false,
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "next-devtools-mcp@latest"
-      ]
-    },
-    "storybook": {
-      "enabled": false,
-      "type": "remote",
-      "url": "http://localhost:6006/mcp"
     }
   }
 }

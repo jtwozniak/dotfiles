@@ -1,0 +1,149 @@
+{
+  "default_agent": "plan",
+  "agents": {
+    "plan": {
+      "color": "#9ECE6A"
+    },
+    "build": {
+      "color": "#7DCFFF"
+    },
+    "coding": {
+      "color": "#7AA2F7"
+    },
+    "explore": {
+      "color": "#BB9AF7"
+    },
+    "figma": {
+      "color": "#F7768E"
+    },
+    "jira": {
+      "color": "#FF9E64"
+    },
+    "datadog": {
+      "color": "#632CA6"
+    },
+    "contentful": {
+      "color": "#14D8CC"
+    },
+    "moneybox-investigation": {
+      "color": "#73DACA"
+    }
+  },
+  "permissions": [
+    {
+      "action": "lsp",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/.config/opencode/**",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "/tmp",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "/tmp/**",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/w",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/w/**",
+      "effect": "allow"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.config/opencode/MEMORY.md",
+      "effect": "allow"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.config/opencode/LEARNINGS.md",
+      "effect": "allow"
+    },
+    {
+      "action": "figma_*",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "jira_*",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "datadog_*",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "contentful_*",
+      "resource": "*",
+      "effect": "deny"
+    }
+  ],
+  "lsp": {
+    "oxlint": {
+      "command": [
+        "./node_modules/.bin/oxlint",
+        "--lsp"
+      ],
+      "extensions": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".mjs",
+        ".cjs",
+        ".mts",
+        ".cts"
+      ]
+    },
+    "vtsls": {
+      "command": [
+        "~/.local/share/nvim/mason/packages/vtsls/node_modules/.bin/vtsls",
+        "--stdio"
+      ],
+      "extensions": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".mjs",
+        ".cjs",
+        ".mts",
+        ".cts"
+      ]
+    }
+  },
+  "compaction": {
+    "auto": true,
+    "keep": {
+      "tokens": 15000
+    },
+    "buffer": 20000
+  },
+  "experimental": {
+    "policies": [
+      {
+        "action": "provider.use",
+        "resource": "*",
+        "effect": "deny"
+      },
+      {
+        "action": "provider.use",
+        "resource": "github-copilot",
+        "effect": "allow"
+      }
+    ]
+  }
+}

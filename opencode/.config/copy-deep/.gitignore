@@ -1,0 +1,16 @@
+# OpenCode runtime and temporary files
+logs/
+sessions/
+*.db
+*.sqlite
+*.sqlite-journal
+
+# Installed plugins (managed via npm/git clones)
+node_modules/
+.git/
+
+
+# Secrets
+.env
+.env.*
+*.key

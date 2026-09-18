@@ -1,0 +1,13 @@
+{
+  "mcp": {
+    "headroom": {
+      "type": "local",
+      "command": [
+        "/home/jtw/.local/bin/headroom",
+        "mcp",
+        "serve"
+      ],
+      "enabled": true
+    }
+  }
+}
