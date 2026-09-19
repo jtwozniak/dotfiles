@@ -1,0 +1,362 @@
+{
+  "version": 3,
+  "workspaces": [
+    {
+      "id": "wX",
+      "custom_name": null,
+      "identity_cwd": "/home/jtw/headroom",
+      "public_pane_numbers": {
+        "1": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 1
+          },
+          "panes": {
+            "1": {
+              "cwd": "/home/jtw/headroom"
+            }
+          },
+          "zoomed": false,
+          "focused": 1,
+          "root_pane": 1
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wV",
+      "custom_name": null,
+      "identity_cwd": "/home/jtw/m/a",
+      "public_pane_numbers": {
+        "2": 1
+      },
+      "next_public_pane_number": 6,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 6,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 2
+          },
+          "panes": {
+            "2": {
+              "cwd": "/home/jtw/m/a"
+            }
+          },
+          "zoomed": false,
+          "focused": 2,
+          "root_pane": 2
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wZ",
+      "custom_name": null,
+      "identity_cwd": "/home/jtw/m/b",
+      "public_pane_numbers": {
+        "3": 1,
+        "5": 3,
+        "6": 5,
+        "4": 2,
+        "16": 13
+      },
+      "next_public_pane_number": 14,
+      "public_tab_numbers": [
+        1,
+        2,
+        3,
+        5,
+        13
+      ],
+      "next_public_tab_number": 14,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 3
+          },
+          "panes": {
+            "3": {
+              "cwd": "/home/jtw/m/b"
+            }
+          },
+          "zoomed": false,
+          "focused": 3,
+          "root_pane": 3
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 4
+          },
+          "panes": {
+            "4": {
+              "cwd": "/home/jtw/m/b/apps/web"
+            }
+          },
+          "zoomed": false,
+          "focused": 4,
+          "root_pane": 4
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 5
+          },
+          "panes": {
+            "5": {
+              "cwd": "/home/jtw/m/b"
+            }
+          },
+          "zoomed": false,
+          "focused": 5,
+          "root_pane": 5
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 6
+          },
+          "panes": {
+            "6": {
+              "cwd": "/home/jtw/m/b"
+            }
+          },
+          "zoomed": false,
+          "focused": 6,
+          "root_pane": 6
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 16
+          },
+          "panes": {
+            "16": {
+              "cwd": "/home/jtw/m/b"
+            }
+          },
+          "zoomed": false,
+          "focused": 16,
+          "root_pane": 16
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w0",
+      "custom_name": null,
+      "identity_cwd": "/home/jtw/m/c",
+      "public_pane_numbers": {
+        "7": 1
+      },
+      "next_public_pane_number": 3,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 3,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 7
+          },
+          "panes": {
+            "7": {
+              "cwd": "/home/jtw/m/c"
+            }
+          },
+          "zoomed": false,
+          "focused": 7,
+          "root_pane": 7
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w11",
+      "custom_name": null,
+      "identity_cwd": "/home/jtw/m/d",
+      "public_pane_numbers": {
+        "8": 1
+      },
+      "next_public_pane_number": 3,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 3,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 8
+          },
+          "panes": {
+            "8": {
+              "cwd": "/home/jtw/m/d"
+            }
+          },
+          "zoomed": false,
+          "focused": 8,
+          "root_pane": 8
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w12",
+      "custom_name": null,
+      "identity_cwd": "/home/jtw/m/e",
+      "public_pane_numbers": {
+        "10": 2,
+        "9": 1,
+        "15": 3
+      },
+      "next_public_pane_number": 4,
+      "public_tab_numbers": [
+        1,
+        2,
+        3
+      ],
+      "next_public_tab_number": 4,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 9
+          },
+          "panes": {
+            "9": {
+              "cwd": "/home/jtw/m/e"
+            }
+          },
+          "zoomed": false,
+          "focused": 9,
+          "root_pane": 9
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 10
+          },
+          "panes": {
+            "10": {
+              "cwd": "/home/jtw/m/e"
+            }
+          },
+          "zoomed": false,
+          "focused": 10,
+          "root_pane": 10
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 15
+          },
+          "panes": {
+            "15": {
+              "cwd": "/home/jtw/m/e"
+            }
+          },
+          "zoomed": false,
+          "focused": 15,
+          "root_pane": 15
+        }
+      ],
+      "active_tab": 1
+    },
+    {
+      "id": "w13",
+      "custom_name": null,
+      "identity_cwd": "/home/jtw/dotfiles/nvim/.config/nvim",
+      "public_pane_numbers": {
+        "11": 1,
+        "12": 2
+      },
+      "next_public_pane_number": 3,
+      "public_tab_numbers": [
+        1,
+        2
+      ],
+      "next_public_tab_number": 3,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 11
+          },
+          "panes": {
+            "11": {
+              "cwd": "/home/jtw/dotfiles/nvim/.config/nvim"
+            }
+          },
+          "zoomed": false,
+          "focused": 11,
+          "root_pane": 11
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 12
+          },
+          "panes": {
+            "12": {
+              "cwd": "/home/jtw/dotfiles/nvim/.config/nvim"
+            }
+          },
+          "zoomed": false,
+          "focused": 12,
+          "root_pane": 12
+        }
+      ],
+      "active_tab": 1
+    },
+    {
+      "id": "w14",
+      "custom_name": null,
+      "identity_cwd": "/home/jtw/w/cms",
+      "public_pane_numbers": {
+        "17": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 17
+          },
+          "panes": {
+            "17": {
+              "cwd": "/home/jtw/w/cms"
+            }
+          },
+          "zoomed": false,
+          "focused": 17,
+          "root_pane": 17
+        }
+      ],
+      "active_tab": 0
+    }
+  ],
+  "active": 2,
+  "selected": 2,
+  "sidebar_width": null,
+  "sidebar_section_split": null,
+  "collapsed_space_keys": []
+}

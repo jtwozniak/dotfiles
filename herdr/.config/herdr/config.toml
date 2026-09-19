@@ -1,0 +1,27 @@
+onboarding = false
+
+[keys]
+prefix = "ctrl+s"
+
+[theme]
+name = "catppuccin"
+
+[theme.custom]
+panel_bg = "#11111b"
+active_row_bg = "#313244"
+selection_bg = "#45475a"
+accent = "#89b4fa"
+green = "#a6e3a1"
+blue = "#89b4fa"
+red = "#f38ba8"
+yellow = "#f9e2af"
+
+[ui]
+agent_panel_sort = "spaces"
+tab_bar_position = "bottom"
+tab_bar_right_separator = " | "
+tab_bar_right = [{ type = "command", command = "~/.config/herdr/status.sh", interval_seconds = 5, timeout_seconds = 2 }]
+[worktrees]
+directory = "~/.herdr/moneybox"
+[terminal]
+new_cwd = "follow"
