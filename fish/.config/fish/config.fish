@@ -19,7 +19,7 @@ alias gem='pnpm gemini --approval-mode=yolo'
 # alias code='headroom wrap opencode --no-serena'
 # alias code-slim='OPENCODE_DISABLE_LSP_DOWNLOAD=true OPENCODE_CONFIG=~/.config/opencode/options.jsonc opencode'
 # alias code-slim='opencode'
-alias code='opencode --standalone'
+alias code='opencode'
 
 # evns 
 # opencode mcp config with secrets
