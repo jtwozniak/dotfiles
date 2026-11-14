@@ -2,6 +2,9 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- Omarchy secure remote clipboard provider (no-op outside Omarchy)
+require("config.remote_clipboard").setup()
+
 local _border = "rounded"
 
 vim.opt.winborder = _border

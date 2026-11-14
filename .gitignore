@@ -1,9 +1,12 @@
 fish/.config/fish/secrets.fish
-# fish/.config/fish/fish_variables
+fish/.config/fish/fish_variables*
+!fish/.config/fish/fish_variables.example
 opencode/.config/opencode/options.jsonc
 opencode/.config/opencode/INSTRUCTIONS.md
-fish/.config/fish/fish_variables
 opencode/.config/opencode/LEARNINGS.md
+
+# Omarchy owns this link; created by install.sh after stow
+nvim/.config/nvim/lua/plugins/theme.lua
 
 node_modules
 
